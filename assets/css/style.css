@@ -79,6 +79,19 @@ li:hover {
     background: #aeaeae;
 }
 
+
+/* Elements and classes created from javascript */
+
+.close {
+
+    float:right;
+    padding-right: 20px;
+    font-size: 1.4 rem;
+}
+.close:hover {
+    color: red;
+    transition: 0.3s;
+}
 @media screen and (max-width: 1200px){
    
     .wrapper {
