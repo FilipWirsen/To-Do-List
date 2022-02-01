@@ -9,7 +9,12 @@ document.addEventListener("DOMContentLoaded", function(){
        }
    }) 
 
-
+   let ul = document.getElementById('task-list');
+        ul.addEventListener("click", function(event){
+        if (event.target.tagName === "LI"){
+            event.target.classList.toggle('checked');
+    }
+        });
 
 });
 
@@ -23,6 +28,7 @@ function addTask(){
         } else {
             alert("You must type something!");
         }
+
 
         
     // Clears the input-field after each "submit"
@@ -39,9 +45,9 @@ function removeTaskBtn(){
         for (let i = 0; i < tasks.length; i++){
             if (tasks[i].hasChildNodes){
                 tasks[i].appendChild(span);
-            }
-            
+    }   
         }
+
 
 // Add click eventlistener to close class that puts display:none on targets li parent
 
@@ -54,10 +60,5 @@ function removeTaskBtn(){
     }
 
 }
-
-
-
-
-
 
 

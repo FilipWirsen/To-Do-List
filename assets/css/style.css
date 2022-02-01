@@ -69,6 +69,7 @@ li {
     transition: 0.3s;
 }
 
+
 /* Use psuedo-class to target every other li element*/
 
 li:nth-child(odd) {
@@ -78,7 +79,6 @@ li:nth-child(odd) {
 li:hover {
     background: #aeaeae;
 }
-
 
 /* Elements and classes created from javascript */
 
@@ -92,6 +92,12 @@ li:hover {
     color: red;
     transition: 0.3s;
 }
+
+.checked {
+    text-decoration: line-through;
+    background-color: #717171 !important;
+}
+
 @media screen and (max-width: 1200px){
    
     .wrapper {
