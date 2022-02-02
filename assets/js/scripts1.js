@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 addTask();
             }
         });
-        
+        getTaskList();
     });
 
 
@@ -18,28 +18,35 @@ document.addEventListener("DOMContentLoaded", function(){
 function addTask() {
     let userInput = inputField.value;
     let task = {userInput, done: false}
-    saveTaskToStorage();
-    outputTask();
+    saveStorage();
+    outputTasks();
     tasks.push(task);
     console.log(tasks);
     inputField.value = "";
 }
 
-function saveTaskToStorage(){
-    localStorage.setItem('taskList', JSON.stringify('tasks'));
-}
-
-function outputTask(){
+function outputTasks(){
     let li = document.createElement('li');
     let userInput = inputField.value
     li.innerHTML = `${userInput} <i class="fas fa-times close"></i>`;
         if (userInput !== ""){
             taskListNode.appendChild(li);
         } else {
-            alert("You must type something!");
+            alert("You must type something");
         }
-
 }
 
+function saveStorage(){
+    localStorage.setItem('taskList',JSON.stringify(tasks));
+}
+
+function getTaskList (){
+    let taskList = JSON.parse(localStorage.getItem('taskList'));
+    for (i = 0; i < taskList.length; i++){
+        let li = document.createElement('li');
+        li.innerHTML = `${taskList[i].userInput} <i class="fas fa-times close"></i>`;
+        taskListNode.appendChild(li);
+    }
+}
 
 
