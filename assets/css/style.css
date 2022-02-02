@@ -18,7 +18,7 @@ body {
 
 .input-wrapper {
     text-align: center;
-    background-color: #db3131;
+    background-color: #07b908;
     padding: 15px;
 }
 
@@ -46,14 +46,14 @@ body {
     width: 20%;
     height: 3rem;
     border: none;
-    background: #e0e0e0;
+    background: #E9E9E9;
     font-size: 1rem;
     transition: 0.3s;
     padding-top: 1px;
 }
 
 #add-btn:hover {
-    background-color: #aeaeae;
+    background-color: #747474;
 }
 
 ul {
@@ -73,7 +73,7 @@ li {
 /* Use psuedo-class to target every other li element*/
 
 li:nth-child(odd) {
-    background: #e0e0e0;
+    background: #E9E9E9;
 }
 
 li:hover {
@@ -83,10 +83,8 @@ li:hover {
 /* Elements and classes created from javascript */
 
 .close {
-
     float:right;
     padding-right: 20px;
-    font-size: 1.4 rem;
 }
 .close:hover {
     color: red;
@@ -95,7 +93,7 @@ li:hover {
 
 .checked {
     text-decoration: line-through;
-    background-color: #717171 !important;
+    background-color: #747474 !important;
 }
 
 @media screen and (max-width: 1200px){
@@ -105,7 +103,7 @@ li:hover {
     }
     
     .container {
-        width: 80%;
+        width: 90%;
 }
 
     #input-field {

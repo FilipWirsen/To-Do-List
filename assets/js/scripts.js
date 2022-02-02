@@ -47,8 +47,6 @@ function removeTaskBtn(){
                 tasks[i].appendChild(span);
     }   
         }
-
-
 // Add click eventlistener to close class that puts display:none on targets li parent
 
     let closeTask = document.getElementsByClassName('close')
