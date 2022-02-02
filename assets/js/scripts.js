@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
        if (event.key === "Enter") {
            addTask();
        }
-   }) 
+   });
 
    let ul = document.getElementById('task-list');
         ul.addEventListener("click", function(event){
@@ -49,14 +49,13 @@ function removeTaskBtn(){
         }
 // Add click eventlistener to close class that puts display:none on targets li parent
 
-    let closeTask = document.getElementsByClassName('close')
+    let closeTask = document.getElementsByClassName('close');
     for (let i = 0; i < closeTask.length; i++){
         closeTask[i].addEventListener("click", function(){
             let li = closeTask[i].parentElement.parentElement;
             li.style.display = "none";
-        })
+        });
     }
 
 }
-
 
