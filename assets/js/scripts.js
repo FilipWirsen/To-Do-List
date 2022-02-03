@@ -1,60 +1,68 @@
+const inputField = document.getElementById('input-field');
+const taskListNode = document.getElementById('task-list');
+const tasks = JSON.parse(localStorage.getItem('taskList')) || [];
+
+
 document.addEventListener("DOMContentLoaded", function(){
-
-    let inputField = document.getElementById('input-field');
     inputField.focus();
-
-   inputField.addEventListener("keydown", function(event){
-       if (event.key === "Enter") {
-           addTask();
-       }
-   });
-
-   let ul = document.getElementById('task-list');
-        ul.addEventListener("click", function(event){
-        if (event.target.tagName === "LI"){
-            event.target.classList.toggle('checked');
-    }
+    inputField.addEventListener("keydown", function(event){
+        if (event.key === "Enter") {
+                addTask();
+            }
         });
+  
+        taskListNode.addEventListener("click", checkTask);
 
-});
 
-function addTask(){
-    let userInput = document.getElementById('input-field').value;
-    let li = document.createElement('li');
-    li.innerHTML = `${userInput}`;
-        if (userInput !== ""){
-            document.getElementById('task-list').appendChild(li);
-            removeTaskBtn();
-        } else {
-            alert("You must type something!");
+        getTaskList();
+    });
+    function checkTask(event){
+        let checkTasks = document.getElementsByTagName('LI')
+        if (event.target.tagName === "LI"){
+          event.target.classList.toggle('checked');
         }
+        for (let i = 0; i < checkTasks.length; i++){
+          if (checkTasks[i].className === "checked"){
+            tasks.splice(i, 1);
+          }
+        }
+        saveStorage();  
+      }
 
 
-        
-    // Clears the input-field after each "submit"
-    document.getElementById('input-field').value = "";
+
+function addTask() {
+    let userInput = inputField.value;
+    let task = {userInput, done: false}
+    outputTasks();
+    tasks.push(task);
+    saveStorage();
+    console.log(tasks);
+    inputField.value = "";
 }
 
-// Add Fontawsome icons to each li element and give it class close
 
-function removeTaskBtn(){
-
-    let tasks = document.getElementsByTagName('li');
-    let span = document.createElement('span');
-    span.innerHTML = `<i class="fas fa-times close"></i>`;
-        for (let i = 0; i < tasks.length; i++){
-            if (tasks[i].hasChildNodes){
-                tasks[i].appendChild(span);
-    }   
+function outputTasks(){
+    let li = document.createElement('li');
+    let userInput = inputField.value
+    li.innerHTML = `${userInput}`;
+        if (userInput !== ""){
+            taskListNode.appendChild(li);
+        } else {
+            alert("You must type something");
         }
-// Add click eventlistener to close class that puts display:none on targets li parent
+}
 
-    let closeTask = document.getElementsByClassName('close');
-    for (let i = 0; i < closeTask.length; i++){
-        closeTask[i].addEventListener("click", function(){
-            let li = closeTask[i].parentElement.parentElement;
-            li.style.display = "none";
-        });
+function saveStorage(){
+    localStorage.setItem('taskList',JSON.stringify(tasks));
+}
+
+function getTaskList (){
+    let taskList = JSON.parse(localStorage.getItem('taskList'));
+    for (let i = 0; i < taskList.length; i++){
+        let li = document.createElement('li');
+        li.innerHTML = `${taskList[i].userInput}`;
+        taskListNode.appendChild(li);
     }
 
 }

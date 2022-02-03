@@ -10,25 +10,42 @@ document.addEventListener("DOMContentLoaded", function(){
                 addTask();
             }
         });
+  
+        taskListNode.addEventListener("click", checkTask);
+
+
         getTaskList();
     });
+    function checkTask(event){
+        let checkTasks = document.getElementsByTagName('LI')
+        if (event.target.tagName === "LI"){
+          event.target.classList.toggle('checked');
+        }
+        for (let i = 0; i < checkTasks.length; i++){
+          if (checkTasks[i].className === "checked"){
+            tasks.splice(i, 1);
+          }
+        }
+        saveStorage();  
+      }
 
 
 
 function addTask() {
     let userInput = inputField.value;
     let task = {userInput, done: false}
-    saveStorage();
     outputTasks();
     tasks.push(task);
+    saveStorage();
     console.log(tasks);
     inputField.value = "";
 }
 
+
 function outputTasks(){
     let li = document.createElement('li');
     let userInput = inputField.value
-    li.innerHTML = `${userInput} <i class="fas fa-times close"></i>`;
+    li.innerHTML = `${userInput}`;
         if (userInput !== ""){
             taskListNode.appendChild(li);
         } else {
@@ -44,9 +61,9 @@ function getTaskList (){
     let taskList = JSON.parse(localStorage.getItem('taskList'));
     for (i = 0; i < taskList.length; i++){
         let li = document.createElement('li');
-        li.innerHTML = `${taskList[i].userInput} <i class="fas fa-times close"></i>`;
+        li.innerHTML = `${taskList[i].userInput}`;
         taskListNode.appendChild(li);
     }
-}
 
+}
 

@@ -82,14 +82,7 @@ li:hover {
 
 /* Elements and classes created from javascript */
 
-.close {
-    float:right;
-    padding-right: 20px;
-}
-.close:hover {
-    color: red;
-    transition: 0.3s;
-}
+
 
 .checked {
     text-decoration: line-through;
