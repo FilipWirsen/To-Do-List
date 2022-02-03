@@ -51,9 +51,8 @@ function outputTasks(){
             taskListNode.appendChild(li);
             tasks.push(task);
         } else {
-            console.log(inputWrapper.appendChild(p));
-            console.log("TYPE!")
-
+            inputWrapper.appendChild(p);
+            inputField.focus();
         }
 }
 

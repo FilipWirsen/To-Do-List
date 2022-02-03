@@ -8,6 +8,12 @@ body {
     justify-content: center;
 }
 
+p {
+    color: red;
+    padding-top: 10px;
+    font-size: 1.1rem;
+}
+
 .container {
     width: 50%;
     margin: 40px auto;
