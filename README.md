@@ -21,17 +21,13 @@ The site will help users to set up daily tasks/goals and keep track of whats bee
 
     ![Check Task](assets/images/checktask.png)
 
+## Feature I Would Like To Implement In The Future
+
 - __The Remove Task Feature__
     
     - To the right of all tasks is a times symbol that allows users to click on it to remove the task incase they dont want to just check it of.
 
     ![Remove Task](assets/images/removetask.png)
-
-## Feature Left To Implement
-
-- __Save Users Task__
-    - Once i've learned more and start to understand more about JavaScript i would love to add a feature that saves and stores the users tasks. This would make it possible for users to acces their tasks on any device without having to keep the site open at all times for it to not reset.
-
 
 ## Color Scheme
 
