@@ -32,10 +32,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 function addTask() {
-    let userInput = inputField.value;
-    let task = {userInput, done: false}
     outputTasks();
-    tasks.push(task);
     saveStorage();
     console.log(tasks);
     inputField.value = "";
@@ -43,13 +40,20 @@ function addTask() {
 
 
 function outputTasks(){
+    let userInput = inputField.value;
     let li = document.createElement('li');
-    let userInput = inputField.value
+    let p = document.createElement('p');
+    let task = {userInput, done: false}
+    let inputWrapper = document.getElementById('wrapper');
+    p.innerHTML = "You need to type something";
     li.innerHTML = `${userInput}`;
         if (userInput !== ""){
             taskListNode.appendChild(li);
+            tasks.push(task);
         } else {
-            alert("You must type something");
+            console.log(inputWrapper.appendChild(p));
+            console.log("TYPE!")
+
         }
 }
 
