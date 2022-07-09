@@ -5,27 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/css/style.css">
     
     <title>To Do List</title>
 </head>
 <body>
-        <div class="wrapper">
-            <div class="container">
-                <div class="input-wrapper">
-                    <h1>To Do List</h1>
-                    <div class="input-container" id="wrapper">
-                    <input type="text"  id="input-field">
-                    <button onclick="addTask()"  id="add-btn">Add Task</button>
-                </div>
-                </div>
-               <ul id ="task-list">
-               </ul>
+    <div class="container bg-success mt-5">
+        <div class="row">
+            <div class="header text-center p-3">
+                <h1>Todo List</h1>
             </div>
         </div>
+        <div class="row info-row p-3">
+            <div class="col-md-4 d-flex justify-content-center">
+                <i class="fas fa-edit"></i>
+                <p>- Click to edit task</p>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <i class="fas fa-check"></i>
+                <p>- Click to mark task as done</p>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <i class="fas fa-trash"></i>
+                <p>- Click to delete task</p>
+            </div>
+        </div>
+    </div>
     <script src="assets/js/scripts.js"></script>
+    <script src="https://kit.fontawesome.com/546d7fc263.js" crossorigin="anonymous"></script>
 </body>
 </html>
