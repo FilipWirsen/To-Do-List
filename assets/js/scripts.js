@@ -2,14 +2,18 @@ var tasks = [];
 const inputField = document.getElementById('input-field');
 
 window.onload = function (){
+    // Sets focus on input field, checks if localstorage exsists and runs displayTasks function.
     inputField.focus();
     inputField.addEventListener("keydown", function(event){
         if (event.key === "Enter") {
             addTask();
-            displayTasks();
         }
 
     });
+    if (JSON.parse(localStorage.getItem("taskList") != null)) {
+        tasks = JSON.parse(localStorage.getItem("taskList"));
+        displayTasks();
+    }
 }
 
 function displayTasks() {
@@ -27,6 +31,7 @@ function addTask() {
     if (inputField.value.trim() != "") {
         tasks.push(inputField.value.trim());
         displayTasks();
+        updateStorage();
         inputField.value = "";
     } else {
         alert("Cant leave field empty");
@@ -36,6 +41,7 @@ function addTask() {
 function deleteTask(index) {
     // Runs when trash icon is clicked. Removes task from tasks array, runs updateStorage and displayTasks functions.
     tasks.splice(index, 1);
+    updateStorage();
     displayTasks();
 
 }
@@ -48,11 +54,11 @@ function checkTask(index) {
     } else {
         tasks[index] =  `<strike> ${tasks[index]} </strike>`;
     }
+    updateStorage();
     displayTasks();
 }
 
 function editTask(index) {
-
     // Runs when edit icon is clicked. If task is checked, remove strike and show modal for editing task.
     modalBody = document.getElementById("modalBody")
     if (tasks[index].includes("<strike>")) {
@@ -71,6 +77,12 @@ function updateTask(index) {
         alert("Cant leave field empty.");
     } else {
         tasks[index] = updatedTask;
+        updateStorage();
         displayTasks();
     }
+}
+
+function updateStorage() {
+    // Updates localstorage.
+    localStorage.setItem("taskList", JSON.stringify(tasks));
 }
