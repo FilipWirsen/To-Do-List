@@ -33,6 +33,20 @@
                 <p>- Click to delete task</p>
             </div>
         </div>
+        <div class="row">
+            <div class="input-group mb-3 d-flex bd-highlight">
+                <input type="text" class="form-control rounded-pill" id="input-field" placeholder="What do you need to do?" aria-label="User task input">
+                <button class="btn bg-light add-task-button" type="button" onclick="addTask()">Add task</button>
+            </div>
+        </div>
+    </div>
+    <div class="container p-0">
+        <ul class="list-group">
+            <div class="d-block" id="task-list">
+            <li class='list-group-item rounded-top-right-20 rounded-bottom-20'>Task<i class='fas fa-trash'></i> <i class='fas fa-check'></i> <i class='fas fa-edit'></i></li>
+            <li class='list-group-item rounded-top-right-20 rounded-bottom-20'>Task2<i class='fas fa-trash'></i> <i class='fas fa-check'></i> <i class='fas fa-edit'></i></li>
+        </div>
+        </ul>
     </div>
     <script src="assets/js/scripts.js"></script>
     <script src="https://kit.fontawesome.com/546d7fc263.js" crossorigin="anonymous"></script>

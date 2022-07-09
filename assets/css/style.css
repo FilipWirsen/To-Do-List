@@ -14,3 +14,26 @@ i {
     float: right !important;
     padding: 5px 15px;
 }
+
+.add-task-button {
+    margin-left: 10px !important;
+    border-radius: 25px !important;
+}
+
+li:nth-child(odd) {
+    background: #E9E9E9;
+}
+
+/* Styling for diffrent screen sizes */
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: auto !important;
+    }
+  }
+
+@media (min-width: 769px) {
+    li:hover {
+        background: #aeaeae;
+    }
+}
