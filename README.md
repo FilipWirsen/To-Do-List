@@ -4,6 +4,8 @@ The main goal with this site is to help people organize their day to day life.
 This site will target people that have alot of things to get done on a daily basis and need a way to keep track of their tasks.
 The site will help users to set up daily tasks/goals and keep track of whats been done and what needs to get done.
 
+![Responsive Img](assets/images/responsive-img.png)
+
 ## Features
 
 -  __The Add Task Feature__
