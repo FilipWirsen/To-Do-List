@@ -14,7 +14,7 @@ window.onload = function (){
         tasks = JSON.parse(localStorage.getItem("taskList"));
         displayTasks();
     }
-}
+};
 
 function displayTasks() {
     // Gets all tasks and displays them in a list to the  user.
@@ -60,7 +60,7 @@ function checkTask(index) {
 
 function editTask(index) {
     // Runs when edit icon is clicked. If task is checked, remove strike and show modal for editing task.
-    modalBody = document.getElementById("modalBody")
+    modalBody = document.getElementById("modalBody");
     if (tasks[index].includes("<strike>")) {
         tasks[index] = tasks[index].replace("<strike>", "");
         tasks[index] = tasks[index].replace("</strike>", "");
@@ -72,7 +72,7 @@ function editTask(index) {
 
 function updateTask(index) {
     // Runs when "save changes" button inside modal is clicked. Updates task and runs updateStorage and displayTasks functions.
-    let updatedTask = document.getElementById("modalText").value
+    let updatedTask = document.getElementById("modalText").value;
     if (updatedTask.trim() == "") {
         alert("Cant leave field empty.");
     } else {
